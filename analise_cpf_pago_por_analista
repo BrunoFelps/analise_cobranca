@@ -1,0 +1,31 @@
+-- Análise de de CPF pago por analista
+
+SELECT
+  CASE 
+    WHEN a.Id_do_Usuario_de_Criacao = '8d2e087a-9e7f-4bd4-bb62-fd6bc6fee49e' THEN 'Diego'
+    WHEN a.Id_do_Usuario_de_Criacao = 'c1743508-819a-499e-bdfd-687bb38650d2' THEN 'Josiane'
+    WHEN a.Id_do_Usuario_de_Criacao = 'b8924e08-f507-41c5-b485-cdc95180f076' THEN 'Luticiana'
+    WHEN a.Id_do_Usuario_de_Criacao = 'af54a851-ea67-4fe2-8438-079d2fb24b40' THEN 'Carla'
+    ELSE 'Outros'
+  END AS criador,
+  a.CPF_do_RF AS cpf,
+  a.Nome_do_RF AS nome_do_rf,
+  p.Data_de_Pagamento AS data_de_pagamento,
+  CONCAT('R$ ', format_number(p.Valor_Pago, 2)) AS valor_pago,
+  p.Tipo_Externo AS status_do_acordo,
+  p.Id_Externo AS id_do_acordo,
+  a.Id_do_Usuario_de_Criacao AS id_criador_do_acordo
+FROM dw.tabelas_plataforma.pagamentos p
+LEFT JOIN dw.tabelas_plataforma.acordos a
+  ON p.Id_Externo = a._id
+WHERE p.Tipo_Externo = 'Acordo'
+  AND p.data_de_pagamento IS NOT NULL
+  AND a.Id_do_Usuario_de_Criacao IN (
+    '8d2e087a-9e7f-4bd4-bb62-fd6bc6fee49e',
+    'c1743508-819a-499e-bdfd-687bb38650d2',
+    'b8924e08-f507-41c5-b485-cdc95180f076',
+    'af54a851-ea67-4fe2-8438-079d2fb24b40'
+  )
+  AND p.data_de_pagamento BETWEEN '2025-07-01' AND '2025-07-31'
+ORDER BY p.data_de_pagamento;
+
