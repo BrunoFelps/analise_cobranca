@@ -36,7 +36,7 @@ faturas_agregadas AS (
         SUM(f.Sub_Total) AS Soma_SubTotal_Vencido
     FROM dw.tabelas_plataforma.faturas f
     INNER JOIN dw.tabelas_plataforma.responsaveisfinanceiros rf
-        ON f._id = rf._id
+        ON f.cpf_do_rf = rf.CPF_do_RF
     WHERE f.Vencido = 'Sim'
     GROUP BY rf.CPF_do_RF
 )
