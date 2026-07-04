@@ -1,0 +1,15 @@
+{
+  "name": "cobranca-assessorias",
+  "version": "1.0.0",
+  "description": "Automação de distribuição de cobrança para assessorias (On7, Setra, AMAIS, Localcred)",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "gerar": "node src/main.js"
+  },
+  "dependencies": {
+    "@databricks/sql": "^1.9.1",
+    "dotenv": "^16.4.7",
+    "xlsx": "^0.18.5"
+  }
+}
