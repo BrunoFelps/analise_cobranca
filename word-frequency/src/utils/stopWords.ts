@@ -1,0 +1,16 @@
+export const STOP_WORDS = new Set([
+  'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+  'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are', 'were', 'be',
+  'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will',
+  'would', 'could', 'should', 'may', 'might', 'shall', 'can', 'not',
+  'this', 'that', 'these', 'those', 'it', 'its', 'i', 'you', 'he', 'she',
+  'we', 'they', 'me', 'him', 'her', 'us', 'them', 'my', 'your', 'his',
+  'their', 'our', 'what', 'which', 'who', 'whom', 'how', 'when', 'where',
+  'why', 'if', 'then', 'than', 'so', 'yet', 'both', 'either', 'neither',
+  'just', 'also', 'very', 'more', 'most', 'much', 'many', 'any', 'all',
+  'no', 'nor', 'such', 'own', 'same', 'there', 'here', 'about', 'into',
+  'through', 'during', 'before', 'after', 'above', 'below', 'between',
+  'each', 'few', 'other', 'some', 'up', 'out', 'off', 'over', 'under',
+  'again', 'further', 'once', 'only', 'too', 'well', 'back', 'even',
+  'still', 'however', 'while', 'because', 'though', 'although', 'since',
+]);

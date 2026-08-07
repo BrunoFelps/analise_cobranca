@@ -1,0 +1,13 @@
+.error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--danger-light);
+  border: 1px solid var(--danger-border);
+  border-left: 4px solid var(--danger);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: #991b1b;
+  animation: fadeIn var(--t) ease both;
+}

@@ -1,0 +1,27 @@
+.cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-height: 200px;
+  animation: fadeIn var(--t-slow) ease both;
+}
+
+.word {
+  cursor: default;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 4px;
+  padding: 1px 3px;
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+
+.word:hover {
+  opacity: 0.65;
+  transform: scale(1.08);
+}

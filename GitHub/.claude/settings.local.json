@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "PowerShell(claude mcp add playwright/mcp@latest)",
+      "PowerShell(Get-Command claude -ErrorAction SilentlyContinue; where.exe claude 2>$null; Get-ChildItem \"$env:LOCALAPPDATA\\\\AnthropicClaude\" -ErrorAction SilentlyContinue | Select-Object Name, FullName)",
+      "PowerShell(\\(Get-Item \"C:\\\\Users\\\\bruno.santos\\\\.claude\"\\).GetFiles\\(\\) | Select-Object Name; \\(Get-Item \"C:\\\\Users\\\\bruno.santos\\\\.claude\"\\).GetDirectories\\(\\) | Select-Object Name)",
+      "WebFetch(domain:books.toscrape.com)",
+      "mcp__playwright__browser_take_screenshot",
+      "Read(//c/Users/bruno.santos/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/eb88935d-d5f9-408d-bbbc-17d85e261f27/0349b0bc-6302-4143-8217-03d94d980fdf/skills/xlsx/**)",
+      "Bash(python -c ' *)",
+      "PowerShell($pyPaths = @\\(\"python\", \"python3\", \"py\"\\); foreach \\($p in $pyPaths\\) { try { & $p --version 2>&1; Write-Host \"Found: $p\"; break } catch {} })",
+      "PowerShell(Add-Type -AssemblyName Microsoft.Office.Interop.Excel -ErrorAction SilentlyContinue; $excel = New-Object -ComObject Excel.Application -ErrorAction Stop; $excel.Visible = $false; $excel.DisplayAlerts = $false; $wb = $excel.Workbooks.Open\\(\"C:\\\\Users\\\\bruno.santos\\\\Downloads\\\\Base para Assessorias.xlsx\", 0, $true\\); $sheets = @\\(\\); for \\($i = 1; $i -le $wb.Sheets.Count; $i++\\) { $sheets += $wb.Sheets.Item\\($i\\).Name }; Write-Host \\($sheets -join \"`n\"\\); $wb.Close\\($false\\); [void][System.Runtime.Interopservices.Marshal]::ReleaseComObject\\($wb\\); $excel.Quit\\(\\); [void][System.Runtime.Interopservices.Marshal]::ReleaseComObject\\($excel\\))",
+      "PowerShell($content = Get-Content \"C:\\\\Temp\\\\xlsx_extract\\\\xl\\\\worksheets\\\\sheet4.xml\" -Raw; $rowStart = $content.IndexOf\\('<row r=\"1\"'\\); $rowEnd = $content.IndexOf\\('</row>', $rowStart\\) + 6; if \\($rowStart -ge 0\\) { $content.Substring\\($rowStart, $rowEnd - $rowStart\\) } else { \"Row 1 not found\" })",
+      "PowerShell($content = Get-Content \"C:\\\\Temp\\\\xlsx_extract\\\\xl\\\\sharedStrings.xml\" -Raw; Write-Host \"File size: $\\($content.Length\\) chars\"; $siCount = \\([regex]::Matches\\($content, '<si>'\\)\\).Count; Write-Host \"Total <si> elements: $siCount\")",
+      "PowerShell(powershell -ExecutionPolicy Bypass -File \"C:\\\\Temp\\\\read_xlsx.ps1\")",
+      "PowerShell(node --version 2>&1)",
+      "PowerShell(npm --version 2>&1)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\bruno.santos\\\\Documents\\\\GitHub\\\\cobranca-assessorias\" -Recurse | Where-Object {!$_.PSIsContainer -and $_.Name -ne \"package-lock.json\"} | Select-Object @{n='Arquivo';e={$_.FullName.Replace\\(\"C:\\\\Users\\\\bruno.santos\\\\Documents\\\\GitHub\\\\cobranca-assessorias\\\\\",\"\"\\)}} | Format-Table -AutoSize)",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\bruno.santos\\\\.claude\\\\channels\\\\telegram\\\\.env\" | ForEach-Object { if \\($_ -match \"TOKEN\"\\) { $_ -replace \"\\(TELEGRAM_BOT_TOKEN=\\\\d+:\\).{5}\", '$1...' } else { $_ } }; Write-Host \"---\"; Test-Path \"C:\\\\Users\\\\bruno.santos\\\\.claude\\\\channels\\\\telegram\\\\access.json\")",
+      "PowerShell(irm bun.sh/install.ps1 | iex)",
+      "mcp__telegram__reply",
+      "mcp__mcp-registry__list_connectors",
+      "mcp__mcp-registry__search_mcp_registry",
+      "mcp__mcp-registry__suggest_connectors",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "mcp__Claude_in_Chrome__computer",
+      "mcp__9db6ffee-c79c-4f00-814d-80d5e8fd6292__genie_query_space_01f128597043196eaab8046cb06b3949",
+      "mcp__9db6ffee-c79c-4f00-814d-80d5e8fd6292__genie_poll_response_01f128597043196eaab8046cb06b3949",
+      "PowerShell(winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements)",
+      "PowerShell(\\(Get-Command gh -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\\\\\", \"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Packages\\\\\" -Filter \"gh.exe\" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 FullName)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth login)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status)",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ]
+  }
+}
